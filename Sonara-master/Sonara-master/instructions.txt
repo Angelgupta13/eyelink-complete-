@@ -1,0 +1,6 @@
+0. cd to the project root
+1. make a new .venv python -m venv .venv (once)
+2. open .venv .venv/Scripts/activate
+3. pip install -r requirements.txt
+4. waitress-serve --host 0.0.0.0 --port 5000 app:app
+5. go to localhost 5000

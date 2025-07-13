@@ -1,0 +1,252 @@
+[
+  {
+    "id": "provider-1",
+    "name": "Priya Sharma",
+    "profilePicture": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=150&h=150&fit=crop&crop=faces",
+    "bio": "Compassionate and experienced caregiver specializing in ASL communication and personal care. Dedicated to creating a supportive and empowering environment for clients.",
+    "specializations": [
+      "ASL Communication",
+      "Personal Care",
+      "Companionship",
+      "Mobility Assistance"
+    ],
+    "languages": ["English", "American Sign Language (ASL)"],
+    "location": "San Francisco Bay Area, CA",
+    "availability": "Weekdays, Evenings",
+    "hourlyRate": 25,
+    "reviews": [
+      {
+        "author": "David L.",
+        "rating": 5,
+        "text": "Priya is an exceptional caregiver. Her ASL skills are fantastic, and she is incredibly patient and kind. Highly recommend!"
+      },
+      {
+        "author": "Maria R.",
+        "rating": 4,
+        "text": "We are very happy with Priya's care. She is reliable and attentive, and her communication is excellent."
+      }
+    ]
+  },
+  {
+    "id": "provider-2",
+    "name": "Arjun Patel",
+    "profilePicture": "https://images.unsplash.com/photo-1573496655703-a421a4d1f1b6?w=150&h=150&fit=crop&crop=faces",
+    "bio": "Experienced in providing mobility assistance and support for individuals with physical disabilities. Certified in first aid and CPR. Passionate about promoting independence and well-being.",
+    "specializations": [
+      "Mobility Assistance",
+      "Personal Care",
+      "Respite Care",
+      "First Aid/CPR"
+    ],
+    "languages": ["English", "Hindi"],
+    "location": "Los Angeles, CA",
+    "availability": "Weekends, Weekdays",
+    "hourlyRate": 28,
+    "reviews": [
+      {
+        "author": "Emily K.",
+        "rating": 5,
+        "text": "Arjun is wonderful! He is strong, reliable, and always cheerful. He has made a huge difference in my father's mobility and quality of life."
+      }
+    ]
+  },
+  {
+    "id": "provider-3",
+    "name": "Deepika Menon",
+    "profilePicture": "https://images.unsplash.com/photo-1587613751728-b0441ca604a7?w=150&h=150&fit=crop&crop=faces",
+    "bio": "Dedicated and empathetic caregiver with a background in elder care and companionship. Fluent in multiple languages and committed to providing culturally sensitive care.",
+    "specializations": [
+      "Companionship",
+      "Elder Care",
+      "Personal Care",
+      "Multilingual"
+    ],
+    "languages": ["English", "Malayalam", "Tamil"],
+    "location": "New York City, NY",
+    "availability": "Evenings, Weekends",
+    "hourlyRate": 26,
+    "reviews": []
+  },
+  {
+    "id": "provider-4",
+    "name": "Rohan Verma",
+    "profilePicture": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150&h=150&fit=crop&crop=faces",
+    "bio": "Patient and skilled in providing care for individuals with cognitive impairments. Experienced in creating structured routines and engaging activities to promote well-being.",
+    "specializations": ["Cognitive Support", "Personal Care", "Respite Care"],
+    "languages": ["English", "Urdu"],
+    "location": "Chicago, IL",
+    "availability": "Weekdays",
+    "hourlyRate": 27,
+    "reviews": [
+      {
+        "author": "Linda M.",
+        "rating": 4,
+        "text": "Rohan has been a great help in caring for my husband who has dementia. He is very patient and understands his needs."
+      }
+    ]
+  },
+  {
+    "id": "provider-5",
+    "name": "Anika Reddy",
+    "profilePicture": "https://images.unsplash.com/photo-1559848764-df25982dd5ad?w=150&h=150&fit=crop&crop=faces",
+    "bio": "Passionate about empowering individuals with disabilities to live fulfilling lives. Specializes in adaptive living skills training and community integration support.",
+    "specializations": [
+      "Adaptive Living Skills",
+      "Community Integration",
+      "Personal Care"
+    ],
+    "languages": ["English", "Telugu"],
+    "location": "Austin, TX",
+    "availability": "Flexible",
+    "hourlyRate": 29,
+    "reviews": []
+  },
+  {
+    "id": "provider-6",
+    "name": "Vikram Banerjee",
+    "profilePicture": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=faces",
+    "bio": "Experienced in providing comprehensive personal care and medical assistance (within caregiver scope). Dedicated to ensuring client comfort and dignity.",
+    "specializations": [
+      "Personal Care",
+      "Medical Assistance (limited)",
+      "Mobility Assistance"
+    ],
+    "languages": ["English", "Bengali"],
+    "location": "Seattle, WA",
+    "availability": "Weekends, Evenings",
+    "hourlyRate": 30,
+    "reviews": []
+  },
+  {
+    "id": "provider-7",
+    "name": "Kavita Joshi",
+    "profilePicture": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=faces",
+    "bio": "Specialized in working with children with special needs. Background in early childhood education and developmental therapy.",
+    "specializations": [
+      "Pediatric Care",
+      "Developmental Support",
+      "Educational Assistance",
+      "Behavioral Support"
+    ],
+    "languages": ["English", "Gujarati"],
+    "location": "Portland, OR",
+    "availability": "Weekdays, Afternoons",
+    "hourlyRate": 32,
+    "reviews": [
+      {
+        "author": "Sarah P.",
+        "rating": 5,
+        "text": "Kavita has been amazing with my son. Her patience and expertise have made a real difference in his development."
+      }
+    ]
+  },
+  {
+    "id": "provider-8",
+    "name": "Suresh Nair",
+    "profilePicture": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=faces",
+    "bio": "Former physical therapy assistant with extensive experience in rehabilitation support and exercise programs.",
+    "specializations": [
+      "Rehabilitation Support",
+      "Exercise Assistance",
+      "Mobility Training",
+      "Pain Management"
+    ],
+    "languages": ["English", "Tamil"],
+    "location": "Denver, CO",
+    "availability": "Morning, Afternoons",
+    "hourlyRate": 35,
+    "reviews": []
+  },
+  {
+    "id": "provider-9",
+    "name": "Meera Kapoor",
+    "profilePicture": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=faces",
+    "bio": "Experienced in providing care for individuals with autism spectrum disorders. Focuses on creating structured environments and developing social skills.",
+    "specializations": [
+      "Autism Support",
+      "Social Skills Training",
+      "Routine Management",
+      "Behavioral Support"
+    ],
+    "languages": ["English", "Hindi"],
+    "location": "Miami, FL",
+    "availability": "Flexible",
+    "hourlyRate": 31,
+    "reviews": [
+      {
+        "author": "Robert M.",
+        "rating": 5,
+        "text": "Meera's understanding of autism has been invaluable. She's helped our daughter make tremendous progress."
+      }
+    ]
+  },
+  {
+    "id": "provider-10",
+    "name": "Rahul Choudhary",
+    "profilePicture": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=faces",
+    "bio": "Specializes in technology assistance and adaptive device training. Helps clients maximize independence through assistive technology.",
+    "specializations": [
+      "Assistive Technology",
+      "Computer Training",
+      "Communication Devices",
+      "Adaptive Equipment"
+    ],
+    "languages": ["English", "Marathi"],
+    "location": "Boston, MA",
+    "availability": "Weekdays, Evenings",
+    "hourlyRate": 33,
+    "reviews": [
+      {
+        "author": "Jennifer L.",
+        "rating": 5,
+        "text": "Rahul's expertise with assistive technology has opened up new possibilities for communication and independence."
+      }
+    ]
+  },
+  {
+    "id": "provider-11",
+    "name": "Divya Krishnamurthy",
+    "profilePicture": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=faces",
+    "bio": "Experienced in working with individuals with visual impairments. Certified in orientation and mobility training.",
+    "specializations": [
+      "Visual Impairment Support",
+      "Orientation Training",
+      "Daily Living Skills",
+      "Navigation Assistance"
+    ],
+    "languages": ["English", "Kannada"],
+    "location": "Philadelphia, PA",
+    "availability": "Weekdays",
+    "hourlyRate": 30,
+    "reviews": [
+      {
+        "author": "Michael S.",
+        "rating": 4,
+        "text": "Divya has helped me regain confidence in navigating my daily activities. Her support has been invaluable."
+      }
+    ]
+  },
+  {
+    "id": "provider-12",
+    "name": "Amit Singh",
+    "profilePicture": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=faces",
+    "bio": "Specializes in memory care and cognitive stimulation therapy. Experience with dementia and Alzheimer's care.",
+    "specializations": [
+      "Memory Care",
+      "Cognitive Therapy",
+      "Senior Care",
+      "Medication Management"
+    ],
+    "languages": ["English", "Punjabi"],
+    "location": "Minneapolis, MN",
+    "availability": "Morning, Afternoons",
+    "hourlyRate": 34,
+    "reviews": [
+      {
+        "author": "Patricia K.",
+        "rating": 5,
+        "text": "Amit's approach to memory care is exceptional. He keeps my mother engaged and active."
+      }
+    ]
+  }
+]

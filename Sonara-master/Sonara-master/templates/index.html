@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ASL Detector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        #videoContainer {
+            margin-top: 20px;
+            display: none; /* Hide video container initially */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ASL Sign Language Detector</h1>
+        
+        <button id="startButton">Start Camera</button>
+        <button id="stopButton" style="display:none; background-color: #f44336;">Stop Camera</button>
+        
+        <div id="videoContainer">
+            <img id="videoFeed" width="640" height="480">
+        </div>
+    </div>
+
+    <script>
+        const startButton = document.getElementById('startButton');
+        const stopButton = document.getElementById('stopButton');
+        const videoContainer = document.getElementById('videoContainer');
+        const videoFeed = document.getElementById('videoFeed');
+        
+        startButton.addEventListener('click', function() {
+            // Start the video stream
+            videoFeed.src = "{{ url_for('video_feed') }}";
+            videoContainer.style.display = 'block';
+            startButton.style.display = 'none';
+            stopButton.style.display = 'inline-block';
+        });
+        
+        stopButton.addEventListener('click', function() {
+            // Stop the video stream
+            videoFeed.src = "";
+            videoContainer.style.display = 'none';
+            startButton.style.display = 'inline-block';
+            stopButton.style.display = 'none';
+            
+            // Call the stop_camera endpoint to release the camera
+            fetch("{{ url_for('stop_camera') }}");
+        });
+    </script>
+</body>
+</html>
