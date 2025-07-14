@@ -18,6 +18,7 @@ In India, more than Six Crore people suffer from hearing problems, and more than
 
 **1. Clone the repository**
 - open the terminal in the folder intended to clone the repository in.
+- paste `git clone https://github.com/ParamAhuja/Antino_eHackathon.git` and enter.
 - after the repository is cloned, open the folder with a code editor like VS code with permission to access the webcam.
 
 **2. Install the requirements**

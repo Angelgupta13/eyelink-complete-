@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Stream</title>
+    <style>
+        #videoContainer { display: flex; flex-direction: column; align-items: center; margin-top: 20px; }
+        #video, #processedFrame { width: 80%; max-width: 640px; border: 2px solid #ccc; border-radius: 8px; }
+        #controls { margin-top: 10px; }
+        button { padding: 10px 20px; margin: 5px; font-size: 16px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Video Stream</h1>
+    <div id="videoContainer">
+        <video id="video" autoplay playsinline></video> <!-- Added playsinline for better mobile compatibility -->
+        <img id="processedFrame" style="display: none;" alt="Processed Frame">
+        <div id="controls">
+            <button id="startButton">Start Camera</button>
+            <button id="stopButton" style="display: none;">Stop Camera</button>
+        </div>
+    </div>
+
+    <script>
+        const video = document.getElementById('video');
+        const processedFrameImg = document.getElementById('processedFrame'); // Renamed for clarity
+        const startButton = document.getElementById('startButton');
+        const stopButton = document.getElementById('stopButton');
+        let stream = null;
+        let captureInterval = null;
+        const frameSendIntervalMs = 333; // Approx 5 FPS, adjust as needed
+        const targetWidth = 640; // Optional: Target width for client-side resizing
+        const targetHeight = 480; // Optional: Target height for client-side resizing
+
+
+        startButton.addEventListener('click', () => {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(cameraStream => {
+                    stream = cameraStream;
+                    video.srcObject = stream;
+                    video.style.display = 'block';
+                    processedFrameImg.style.display = 'none';
+                    startButton.style.display = 'none';
+                    stopButton.style.display = 'inline-block';
+
+                    captureInterval = setInterval(captureAndSendFrame, frameSendIntervalMs);
+                })
+                .catch(err => {
+                    console.error("Error accessing the camera: ", err);
+                    alert("Unable to access the camera. Please check permissions.");
+                });
+        });
+
+        stopButton.addEventListener('click', () => {
+            if (stream) {
+                stream.getTracks().forEach(track => track.stop());
+                video.srcObject = null;
+                stream = null;
+            }
+            clearInterval(captureInterval);
+            startButton.style.display = 'inline-block';
+            stopButton.style.display = 'none';
+            processedFrameImg.style.display = 'none'; // Hide processed frame too
+            video.style.display = 'block'; // Show video element again (though it's blank)
+        });
+
+        function captureAndSendFrame() {
+            if (!stream || video.readyState < video.HAVE_METADATA || video.videoWidth === 0) {
+                // Video not ready or stream stopped
+                return;
+            }
+            const canvas = document.createElement('canvas');
+            // Optional: Client-side resizing
+            // canvas.width = targetWidth;
+            // canvas.height = targetHeight;
+            // const ctx = canvas.getContext('2d');
+            // ctx.drawImage(video, 0, 0, targetWidth, targetHeight);
+
+            // Original size
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+
+            canvas.toBlob(blob => {
+                if (!blob) {
+                    console.error('Canvas to Blob conversion failed');
+                    return;
+                }
+                const formData = new FormData();
+                formData.append('frame', blob, 'frame.jpg');
+
+                fetch('/process_frame', {
+                    method: 'POST',
+                    body: formData, // Send FormData directly
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.processed_frame) {
+                        processedFrameImg.src = data.processed_frame;
+                        processedFrameImg.style.display = 'block';
+                        video.style.display = 'none';
+                    } else if (data.error) {
+                        console.error('Server error:', data.error);
+                    }
+                })
+                .catch(err => {
+                    console.error('Error sending/receiving frame:', err);
+                });
+            }, 'image/jpeg', 0.85); // Send as JPEG with 85% quality
+        }
+    </script></body>
+</html>
